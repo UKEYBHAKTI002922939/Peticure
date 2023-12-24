@@ -1,0 +1,91 @@
+@use "abstracts/colors";
+
+.fosterDetailContainer {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 8px;
+
+    .imageWrapper {
+        display: flex;
+        border-radius: 10px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 13px;
+        > img {
+            transition: transform 0.3s ease-in-out;
+            object-fit: fill;
+            width: 100%;
+            // &:hover {
+            //     transform: scale(1.1);
+            // }
+        }
+    }
+
+     h1 {
+        color: colors.$primary;
+        font-size: 2rem; // Larger font size for the title
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        color: colors.$primary; // Choose a color that fits your design
+        font-size: 1rem; // Adjust the font size as needed
+        margin-bottom: 5px; // Space below the heading
+        margin-top: 20px;
+        padding-bottom: 5px; // Padding at the bottom
+        // border-bottom: 2px solid #ddd; // A bottom border for emphasis
+        width: fit-content; // Adjust width to the content size
+    }
+
+    p {
+        color: rgb(102, 102, 102);
+        margin-bottom: 8px; // Consistent margin for paragraphs
+
+        &:last-child {
+            margin-bottom: 0; // No margin for the last paragraph
+        }
+    }
+
+    // Phone and Email specific styles (if needed)
+    .phone, .email {
+        font-weight: bold;
+    }
+
+    hr {
+        border: none;  // Removes the default border
+        height: 1px;  // Thickness of the line
+        background-color: colors.$primary;  // Color of the line
+        margin: 20px 0;  // Space above and below the line
+    }
+
+    .contactButtons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+
+        a {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .callButton {
+            background-color: rgb(76, 175, 80); // Green background for call
+        }
+
+        .emailButton {
+            background-color: rgb(30, 144, 255); // Blue background for email
+        }
+    }
+}
+

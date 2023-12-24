@@ -1,0 +1,54 @@
+@use 'abstracts' as *;
+
+
+//This file contains the chages related tot he slider scss file
+
+/***
+    The new CSS reset - version 1.8.5 (last updated 14.6.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" attribute is exclud, because otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+.awssld {
+  --slider-height-percentage: 50% !important;
+  --slider-transition-duration: 700ms;
+  --organic-arrow-thickness: 4px;
+  --organic-arrow-border-radius: 0px;
+  --organic-arrow-height: 40px;
+  --organic-arrow-color: transparent;
+  --control-button-width: 10%;
+  --control-button-height: 25%;
+  --control-button-background: transparent;
+  --control-bullet-color: #fafafa;
+  --control-bullet-active-color: #d5d5d5;
+  --loader-bar-color: transparent !important;
+  --loader-bar-height: 6px;
+}
+
+@include screen_min_width(768px) {
+  .awssld__container {
+    padding-bottom: $slider-height;
+  }
+  .awssld__content {
+    height: $slider-height;
+    & > img {
+      height: $slider-height;
+    }
+  }
+}
+
+.awssld__custom-image-container {
+  width: 100%;
+  position: relative;
+
+  .awssld__custom-image {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+}

@@ -1,0 +1,14 @@
+@use 'abstracts/colors';
+
+.dropdownTitle {
+  text-align: center;
+  margin-bottom: 0.7rem;
+  color: colors.$textPurple;
+  font-size: medium;
+  font-weight: 600;
+  
+}
+
+.dropdown {
+    padding: 0.7rem;
+}

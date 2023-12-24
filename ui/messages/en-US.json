@@ -1,0 +1,27 @@
+{
+    "Home": {
+        "title": "PetiCure | Home",
+        "description": "PetiCure is a pet welfare application that helps you find a pet for adoption, donation, foster, shelter or report abuse."
+    },
+    "Shelter": {
+        "title": "PetiCure | Shelters",
+        "description": "PetiCure is a pet welfare application that helps you find a pet for adoption, donation, foster, shelter or report abuse."
+    },
+    "Foster": {
+        "title": "PetiCure | Fosters",
+        "description": "PetiCure is a pet welfare application that helps you find a pet for adoption, donation, foster, shelter or report abuse."
+    },
+    "Adoption": {
+        "title": "PetiCure | Adoptions",
+        "description": "PetiCure is a pet welfare application that helps you find a pet for adoption, donation, foster, shelter or report abuse."
+    },
+    "Donation": {
+        "title": "PetiCure | Donations",
+        "description": "PetiCure is a pet welfare application that helps you find a pet for adoption, donation, foster, shelter or report abuse."
+    },
+    "ReportAbuse": {
+        "title": "PetiCure | Report Abuse",
+        "description": "PetiCure is a pet welfare application that helps you find a pet for adoption, donation, foster, shelter or report abuse."
+    }
+
+}

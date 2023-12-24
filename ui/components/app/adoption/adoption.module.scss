@@ -1,0 +1,23 @@
+@use 'abstracts/colors';
+
+.adoptionWrapper {
+    background-color: #F4F2EE;
+    padding-bottom: 3rem;
+}
+
+.rowAdoption {
+    justify-content: space-between;
+}
+
+.emptyAdoption {
+    margin: 1rem;
+}
+
+.adoptionTitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #fff;
+    background-color: colors.$footerDark;
+    padding: 1rem;
+    font-weight: 600;
+}

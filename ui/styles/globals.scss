@@ -1,0 +1,45 @@
+// Contains import to all the specific files
+@forward 'reset';
+@forward "common";
+@forward "slider";
+@forward "media";
+@use 'abstracts/colors';
+
+#__next {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: colors.$appBackgroudColor;
+}
+
+.no-gutter {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.relative {
+  position: relative !important;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.negative-margin {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.disable-hover {
+  pointer-events: none;
+}

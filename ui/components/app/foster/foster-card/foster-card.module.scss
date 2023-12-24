@@ -1,0 +1,86 @@
+@use "abstracts/colors";
+
+.fosterContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; // Adjust the space between cards
+    justify-content: center; // Center the cards horizontally
+    align-items: flex-start; // Align items from the start of the container
+}
+
+.fosterCard {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 390px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;  
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+        color: #666;
+        margin: 10px 0;
+        font-weight: 200;
+
+        .highlight {
+            color: #007bff;
+            font-weight: bold;
+        }
+    }
+}
+
+.fosterName {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    color: colors.$textPurple;
+    &:hover {
+        color: colors.$primary;
+    }
+}
+
+.textWrapper {
+    padding: 1rem;
+    padding-bottom: 0;
+}
+
+.imageWrapper {
+    display: flex;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    > img {
+        transition: transform 0.3s ease-in-out;
+        object-fit: fill;
+        width: 100%;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.viewDetailsButton {
+    background-color: colors.$primary; // Green background
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    bottom: 20px; // 20 pixels from the bottom
+    left: 29%; // Center horizontally
+    transform: translateX(-50%); // Adjust for exact centering
+
+    &:hover {
+      background-color: #45a049; // Darker green on hover
+    }
+}

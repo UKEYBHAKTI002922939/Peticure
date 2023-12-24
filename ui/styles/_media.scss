@@ -1,0 +1,48 @@
+@use "abstracts" as *;
+@use "sass:string";
+
+
+
+/***
+    The new CSS reset - version 1.8.5 (last updated 14.6.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" attribute is exclud, because otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  max-width: calc(100% - 2rem);
+}
+
+.col {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@include generate-col(null);
+@include generate-offset(null);
+
+@each $breakpoint, $suffix in $breakpoints {
+  @include screen_min_width($breakpoint) {
+    .container {
+      max-width: calc(string.unquote($breakpoint) - 2rem);
+    }
+    @include generate-col($suffix);
+    @include generate-offset($suffix);
+  }
+}

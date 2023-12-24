@@ -1,0 +1,60 @@
+@use "abstracts/colors";
+
+.servicesCard {
+    margin: 0 1rem;
+    padding: 0.8rem;
+    margin-top: 1.5rem;
+    background-color: white;
+    height: 100%;
+}
+
+.serviceName {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    color: colors.$textPurple;
+    &:hover {
+        color: colors.$primary;
+    }
+}
+
+.serviceDescription {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    color: colors.$textPurple;
+}
+
+.readMore {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: colors.$textPurple;
+    cursor: pointer;
+    display: inline-flex;
+    text-decoration: underline;
+    &:hover {
+        color: colors.$primary;
+        
+    }
+}
+
+.textWrapper {
+    padding: 1rem;
+    padding-bottom: 0;
+}
+
+.imageWrapper {
+    display: flex;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    > img {
+        transition: transform 0.3s ease-in-out;
+        object-fit: fill;
+        width: 100%;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}

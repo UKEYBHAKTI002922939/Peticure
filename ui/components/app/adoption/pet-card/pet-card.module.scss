@@ -1,0 +1,51 @@
+@use 'abstracts/colors';
+
+.petCardContainer {
+    margin: 1rem;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.petCardName {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+    color: colors.$primary;
+}
+
+.petCardImage {
+    object-fit: cover;
+    width: 100%;
+}
+
+.petCardPetInfo {
+    text-align: center;
+    color: colors.$textPurple;
+    font-weight: 500;
+}
+
+.bullet::after {
+    content: "\2022";
+    display: inline-block;
+    padding: 0 8px 0 5px;
+    font-size: 12px;
+}
+
+.petCardInfo {
+    position: relative;
+    padding: 0.5rem;
+    &::before {
+        content: "";
+        display: block;
+        height: 18px;
+        border-radius: 50% 50% 0 0;
+        position: absolute;
+        bottom: calc(100%);
+        right: -5px;
+        left: -5px;
+        background-color: #fff;
+    }
+}

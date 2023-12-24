@@ -1,0 +1,26 @@
+{
+    "Home": {
+        "title": "Hola Mundo",
+        "description": "PetiCure es una aplicación de bienestar animal que te ayuda a encontrar una mascota para adoptar, donar, cuidar temporalmente, ubicar en refugios o reportar abusos."
+    },
+    "Shelter": {
+        "title": "Refugio De Animales",
+        "description": "PetiCure es una aplicación de bienestar animal que te ayuda a encontrar una mascota para adoptar, donar, cuidar temporalmente, ubicar en refugios o reportar abusos."
+    },
+    "Foster": {
+        "title": "Hogar de acogida para mascotas",
+        "description": "PetiCure es una aplicación de bienestar animal que te ayuda a encontrar una mascota para adoptar, donar, cuidar temporalmente, ubicar en refugios o reportar abusos."
+    },
+    "Adoption": {
+        "title": "Adopción de mascotas",
+        "description": "PetiCure es una aplicación de bienestar animal que te ayuda a encontrar una mascota para adoptar, donar, cuidar temporalmente, ubicar en refugios o reportar abusos."
+    },
+    "Donation": {
+        "title": "Donación de mascotas",
+        "description": "PetiCure es una aplicación de bienestar animal que te ayuda a encontrar una mascota para adoptar, donar, cuidar temporalmente, ubicar en refugios o reportar abusos."
+    },
+    "ReportAbuse": {
+        "title": "Reportar abuso",
+        "description": "PetiCure es una aplicación de bienestar animal que te ayuda a encontrar una mascota para adoptar, donar, cuidar temporalmente, ubicar en refugios o reportar abusos."
+    }
+}

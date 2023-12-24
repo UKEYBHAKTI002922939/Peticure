@@ -1,0 +1,125 @@
+/* aboutservices-provided.module.scss */
+
+.servicesProvidedSection {
+  background-color: #f4f2ee;
+  padding: 2rem 0 3.5rem;
+}
+/* aboutservices-provided.module.scss */
+
+.serviceDescription {
+  color: #007bff; /* Blue color for links */
+}
+
+.serviceLink {
+  color: #007bff;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #0056b3; /* Darker shade on hover */
+  }
+}
+
+.aboutUsImage {
+  width: 500px; /* Adjust the width as needed */
+  border-radius: 50px;
+  margin-bottom: 20px; /* Adjust the margin as needed */
+  
+}
+.makeAppointmentSection {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.aboutUsBox {
+width: 500px;
+  margin: 0; /* Resetting margin */
+  margin-left: 150px;
+  margin-right: 200px; /* Adjust the margin as needed to reduce horizontal distance */
+  
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(117, 0, 0, 0.1);
+  h1 {
+    font-size: 20px;
+    text-align: left;
+    color: #0b0d03;
+  }
+
+  h2 {
+    text-align: left;
+    margin-top: 20px;
+    color: #0b0d03;
+    font-size: 20px;
+    line-height: 1.1em;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 11px;
+  }
+
+  p {
+    font-size: 11px;
+      margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0b0d03;
+  }
+
+
+  /* aboutservices-provided.module.scss */
+/* aboutservices-provided.module.scss */
+
+.appointmentContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .btnone,
+  .btnone {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    color: #f60707;
+
+    &:hover {
+      background-color: #03080d;
+    }
+
+    .txt {
+      font-weight: bold;
+    }
+
+    &.style2 {
+      margin-left: 20px;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    /* Additional styles for Make Appointment button */
+    &.makeappointment {
+      background-color: #11e6865c; /* Set your desired background color */
+    }
+  }
+
+  .fa-phone {
+    font-size: 20px;
+    margin-right: 5px;
+  }
+
+  /* Additional styles for phone number */
+  .number {
+    color: #007bff; /* Set your desired color */
+  }
+}
+
+
+}

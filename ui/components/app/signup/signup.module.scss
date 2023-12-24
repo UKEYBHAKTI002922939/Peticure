@@ -1,0 +1,89 @@
+@use "abstracts/colors";
+
+.lay {
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-size: 2rem;
+  color: colors.$primary;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.signUpTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+  background-color: colors.$footerDark;
+  padding: 1rem;
+  font-weight: 600;
+}
+.container {
+  max-width: 400px;
+  max-height: 600px; /* Increase the height to accommodate additional fields */
+  margin: auto; /* Center the container horizontally */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the children vertically */
+
+  /* Add margin-top to separate the form from the navbar header */
+  margin-top: auto;
+  margin-bottom: 100px;
+
+  background-color: #fff;
+
+  // /* Gradient background for the container */
+  // background-image: linear-gradient(
+  //   to top,
+  //   white  0%,
+  //   white 100%
+  // );
+}
+
+.group {
+  margin-bottom: 15px; /* Adjust margin for better spacing */
+}
+
+.label {
+  display: block; /* Display */
+  margin-bottom: 10px; /* Margin from bottom */
+  font-weight: bold; /* Font weight */
+  color: black; /* Text color for labels */
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc; /* Border color matches labels */
+  border-radius: 3px;
+  background-color: white; /* Transparent background for inputs */
+  color: black; /* Text color for inputs */
+}
+
+.input:focus {
+  outline: none; /* Remove outline on focus */
+  border: 1px solid #ccc; /* Highlight border on focus */
+}
+
+.input::placeholder {
+  color: #ddd; /* Change this to your desired color */
+  opacity: 0.7; /* Adjust the opacity for desired lightness */
+}
+
+.button {
+  background-color: colors.$primary;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button:hover {
+  background-color: grey; /* Hover effect for button background */
+}

@@ -1,0 +1,83 @@
+@use 'abstracts/colors';
+.contactSection {
+  background-image: url('/images/breadcrumb.png');
+  background-size: cover;
+  background-position: center;
+  color: colors.$primary;
+  padding: 300px 0;
+}
+
+.contactBlocksSection {
+  background-color: #fefefe; // Change to your desired background color
+  padding: 40px 0;
+}
+
+.contactWrapper {
+  text-align: center;
+}
+
+.headingWrapper {
+  margin-bottom: 20px;
+}
+.headingWrapper h1 {
+  font-size: 60px; /* Adjust the font size as needed */
+  color: colors.$primary; /* Adjust the font color */
+  margin: 0; /* Remove default margin to ensure accurate positioning */
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 750px;
+  gap: 60px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contactblock {
+  text-align: center;
+  flex: 1 0 calc(40% - 40px);
+  padding: 40px;
+  width: 200px;
+  margin-bottom: 100px;
+  background-color:#fff;;
+  color: rgb(0, 0, 0, 0.639); // Change to your desired text color
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.05);
+
+
+  a {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.639); // Change to your desired link color
+    text-decoration: none;
+    display: block;
+    margin-top: 8px;
+    font-weight: bold;
+  }
+  p {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.639); // Change to your desired link color
+    text-decoration: none;
+    display: block;
+    margin-top: 8px;
+    font-weight: bold;
+  }
+  h3 {
+    color: colors.$primary; /* Change to your desired color */
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 1200px) {
+  .contactblock {
+    flex: 1 0 100%;
+  }
+
+}
+
+.footerHeadingDot {
+  color: colors.$appGreen;
+  font-size: 5rem;
+  margin-right: 1rem;
+
+}

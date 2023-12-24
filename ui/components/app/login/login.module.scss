@@ -1,0 +1,93 @@
+@use "abstracts/colors";
+
+.lay {
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-size: 2rem;
+  color: colors.$primary;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.loginTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+  background-color: colors.$footerDark;
+  padding: 1rem;
+  font-weight: 600;
+}
+.container {
+  max-width: 300px;
+  max-height: 700px;
+  margin: auto; /* Center the container horizontally */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+
+  /* Add margin-top to separate the form from the navbar header */
+  margin-top: 30px;
+  margin-bottom: 150px;
+}
+
+.group {
+  margin-bottom: 20px; //margin top
+}
+
+.label {
+  display: block; //display
+  margin-top: 20px;
+  font-weight: bold; // font weight
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.input::placeholder {
+  color: #ddd; /* Change this to your desired color */
+  opacity: 0.7; /* Adjust the opacity for desired lightness */
+}
+
+.button {
+  background-color: colors.$primary;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #ccc;
+}
+
+// for links in the signup page
+.linksWrapper {
+  /* Position the links absolutely to the right of the form */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Vertically align the links */
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  a {
+    color: colors.$primary; /* Set the link text color to pink */
+    text-decoration: none; /* Remove default link underline */
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

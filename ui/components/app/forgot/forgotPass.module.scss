@@ -1,0 +1,59 @@
+.container {
+    max-width: 400px;
+    max-height: 300px; /* Adjust height to accommodate fewer fields */
+    margin: auto; /* Center the container horizontally */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the children vertically */
+  
+    /* Add margin-top to separate the form from the navbar header */
+    margin-top: 90px;
+    margin-bottom: 250px;
+  
+    /* Background color for the container */
+    background-color: #fff;
+  }
+  
+  .group {
+    margin-bottom: 15px; /* Adjust margin for better spacing */
+  }
+  
+  .label {
+    display: block; /* Display */
+    margin-bottom: 5px; /* Margin from bottom */
+    font-weight: bold; /* Font weight */
+    color: #000; /* Text color for labels */
+  }
+  
+  .input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Border color for inputs */
+    border-radius: 3px;
+    background-color: #fff; /* Transparent background for inputs */
+    color: #000; /* Text color for inputs */
+  }
+  
+  .input:focus {
+    outline: none; /* Remove outline on focus */
+    border: 2px solid #000; /* Highlight border on focus */
+  }
+  
+  .button {
+    background-color: #fe4880; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .button:hover {
+    background-color: grey; /* Hover effect for button background */
+  }
+  

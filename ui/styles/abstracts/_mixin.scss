@@ -1,0 +1,63 @@
+@use 'sass:math';
+
+// Contains all the functions
+@mixin col-common {
+  position: relative;
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@mixin generate-col($value) {
+  @for $i from 1 through 12 {
+    .col#{$value}-#{$i} {
+      flex: 0 0 math.div($i, 12) * 100%;
+      width: math.div($i, 12) * 100%;
+      @include col-common;
+    }
+  }
+}
+
+@mixin generate-offset($value) {
+  @for $i from 0 through 12 {
+    .offset#{$value}-#{$i} {
+      margin-left: math.div($i, 12) * 100%;
+    }
+  }
+}
+
+@mixin screen_min_width($val) {
+  @media only screen and (min-width: $val) {
+    @content;
+  }
+}
+
+@mixin screen_max_width($val) {
+  @media not all and (min-width: $val) {
+    @content;
+  }
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}

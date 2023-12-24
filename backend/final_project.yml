@@ -1,0 +1,380 @@
+openapi: 3.0.3
+info:
+  title: INFO6150 - Web Design and User Experience Engineering Final Project || Peticure
+  description:
+    Peticure is a user-friendly pet adoption and care website that connects pet lovers with their ideal companions. Our platform offers a diverse range of adoptable pets, each with detailed profiles and images. Explore comprehensive care guides, connect with local foster homes, and build a supportive community. Simplify the adoption process and foster a loving environment for pets and their new families.
+  version: "1.0.0"
+externalDocs:
+  description: Github Source
+  url: https://github.com/info-6150-fall-2023/final-project-peticure
+servers:
+  - url: http://localhost:8000/
+tags:
+  - name: pet
+    description: Everything about Pet - Resources
+  - name: store
+    description: Access to Petstore orders
+  - name: shelter
+  - name: health-records
+
+    
+paths:
+  /pet:
+    get:
+      tags:
+        - pet 
+      summary : Retrieve a list of available pets
+      description : This resource would handle information about available pets for adoption
+      operationId: getallpets
+      responses: 
+        '200':
+          description: List of pets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pet'
+        '500':
+          description: Internal server error
+
+    post:
+      tags:
+        - pet
+      summary: Updates a pet for adoption
+      description: Add a new pet to the adoption list
+      operationId: updatePetWithForm
+      parameters:
+        - name: petId
+          in: path
+          description: ID of pet that needs to be updated
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: name
+          in: query
+          description: Name of pet that needs to be updated
+          schema:
+            type: string
+        - name: status
+          in: query
+          description: Status of pet that needs to be updated
+          schema:
+            type: string
+      responses:
+        '405':
+          description: Invalid input
+
+  '/pet/{petId}':
+    get:
+      tags:
+        - pet
+      summary: Find Specific pet by ID
+      description: Returns a single pet
+      operationId: getPetById
+      parameters:
+        - name: petId
+          in: path
+          description: ID of pet to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Pet not found
+    
+    delete:
+      tags:
+        - pet
+      summary: Deletes a pet by ID
+      description: ''
+      operationId: deletePet
+      parameters:
+        - name: petId
+          in: path
+          description: Pet id to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: Invalid pet value
+
+  /store/inventory:
+    get:
+      tags:
+        - store
+      summary: Returns pet inventories by status
+      description: Returns a map of status codes to quantities
+      operationId: getInventory
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: integer
+                  format: int32
+
+  
+  /store/order:
+    post:
+      tags:
+        - store
+      summary: Place an order for a pet
+      description: Place a new order in the store
+      operationId: placeOrder
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '405':
+          description: Invalid input
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+
+  /api/shelters:
+    get:
+      tags:
+        - shelter
+      summary: Retrieve a list of shelters.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                shelters:
+                  - id: 1
+                    name: "Happy Tails Shelter"
+                    location: "1234 Park Ave"
+                    contact: "555-1234"
+                  - id: 2
+                    name: "Furry Friends Home"
+                    location: "5678 Elm St"
+                    contact: "555-5678"
+    post:
+      tags:
+        - shelter
+      summary: Add a new shelter to the list.
+      requestBody:
+        description: Shelter details to be added.
+        required: true
+        content:
+          application/json:
+            example:
+              name: "New Hope Shelter"
+              location: "9012 Oak Dr"
+              contact: "555-9012"
+      responses:
+        '201':
+          description: Shelter added successfully
+        '400':
+          description: Bad request
+
+  /api/shelters/{shelter_id}:
+    get:
+      tags:
+        - shelter
+      summary: Retrieve details of a specific shelter.
+      parameters:
+        - name: shelter_id
+          in: path
+          description: ID of the shelter to retrieve details.
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                id: 1
+                name: "Happy Tails Shelter"
+                location: "1234 Park Ave"
+                contact: "555-1234"
+
+    put:
+      tags:
+        - shelter
+      summary: Update information for a specific shelter.
+      parameters:
+        - name: shelter_id
+          in: path
+          description: ID of the shelter to update.
+          required: true
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        description: Updated shelter details.
+        required: true
+        content:
+          application/json:
+            example:
+              name: "Happy Tails Shelter"
+              location: "1234 Park Ave, New City"
+              contact: "555-4321"
+      responses:
+        '200':
+          description: Shelter updated successfully
+        '400':
+          description: Bad request
+
+    delete:
+      tags:
+        - shelter
+      summary: Remove a shelter from the list.
+      parameters:
+        - name: shelter_id
+          in: path
+          description: ID of the shelter to remove.
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '204':
+          description: Shelter removed successfully
+        '404':
+          description: Shelter not found
+
+  /api/pets/{pet_id}/health-records:
+    get:
+      tags: 
+        - health-records
+      summary: Retrieve health records for a specific pet
+      description: Get health records associated with the specified pet.
+      parameters:
+        - name: pet_id
+          in: path
+          description: ID of the pet whose health records are to be retrieved
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Successful operation. Returns the health records of the pet.
+          content:
+            application/json:
+              schema:
+                type: object  # Replace this with your actual response schema if needed
+    post:
+      tags: 
+        - health-records
+      summary: Add a new health record for a pet
+      description: Create a new health record entry for the specified pet.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HealthRecord'
+      parameters:
+        - name: pet_id
+          in: path
+          description: ID of the pet to add the health record to
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '201':
+          description: Health record added successfully.
+        '400':
+          description: Invalid input, such as missing or incorrect data.
+        '404':
+          description: Pet not found.
+
+
+
+components:
+  schemas:
+    Pet:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 10
+        name:
+          type: string
+          example: doggie
+
+    Order:
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 10
+        petId:
+          type: integer
+          format: int64
+          example: 198772
+        quantity:
+          type: integer
+          format: int32
+          example: 7
+        shipDate:
+          type: string
+          format: date-time
+        status:
+          type: string
+          description: Order Status
+          enum:
+            - placed
+            - approved
+            - delivered
+          example: approved
+        complete:
+          type: boolean
+    
+    HealthRecord:
+      type: object
+      properties:
+        record_id:
+          type: integer
+          format: int64
+          description: Unique identifier for the health record
+        pet_id:
+          type: integer
+          format: int64
+          description: ID of the associated pet
+        date:
+          type: string
+          format: date
+          description: Date of the health record
+        details:
+          type: string
+          description: Details of the health record
+
+  requestBodies:
+    Pet:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Pet'
